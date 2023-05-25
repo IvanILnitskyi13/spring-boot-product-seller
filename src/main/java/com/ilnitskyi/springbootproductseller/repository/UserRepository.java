@@ -1,5 +1,6 @@
 package com.ilnitskyi.springbootproductseller.repository;
 
+import com.ilnitskyi.springbootproductseller.model.Role;
 import com.ilnitskyi.springbootproductseller.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,6 +14,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Modifying
     @Query("update User set role =:role where username = :username")
-    void updateUserRole(@Param("username") String username, @Param("role") String role);
+    void updateUserRole(@Param("username") String username, @Param("role") Role role);
 
 }
