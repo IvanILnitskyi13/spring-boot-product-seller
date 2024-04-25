@@ -1,7 +1,8 @@
-package com.ilnitskyi.springbootproductseller.services;
+package com.ilnitskyi.springbootproductseller.services.impl;
 
 import com.ilnitskyi.springbootproductseller.model.Product;
 import com.ilnitskyi.springbootproductseller.repository.ProductRepository;
+import com.ilnitskyi.springbootproductseller.services.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,6 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product saveProduct(Product product) {
         product.setCreateTime(LocalDateTime.now());
-
         return productRepository.save(product);
     }
 

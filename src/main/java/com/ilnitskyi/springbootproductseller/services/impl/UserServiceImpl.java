@@ -1,8 +1,9 @@
-package com.ilnitskyi.springbootproductseller.services;
+package com.ilnitskyi.springbootproductseller.services.impl;
 
 import com.ilnitskyi.springbootproductseller.model.Role;
 import com.ilnitskyi.springbootproductseller.model.User;
 import com.ilnitskyi.springbootproductseller.repository.UserRepository;
+import com.ilnitskyi.springbootproductseller.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,6 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole(Role.USER);
         user.setCreateTime(LocalDateTime.now());
-
         return userRepository.save(user);
     }
 
