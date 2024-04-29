@@ -1,11 +1,19 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: admin
-
+  application:
+    name: e-shop app
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: admin
+  security:
+    user:
+      name: admin
+      password: admin
+token:
+  signing:
+    key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
